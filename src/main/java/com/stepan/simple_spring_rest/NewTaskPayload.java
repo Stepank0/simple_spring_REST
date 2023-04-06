@@ -1,2 +1,4 @@
-package com.stepan.simple_spring_rest;public class NewTaskPayload {
+package com.stepan.simple_spring_rest;
+
+public record NewTaskPayload(String details) {
 }
