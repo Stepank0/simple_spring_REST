@@ -10,11 +10,7 @@ import java.util.UUID;
 @Repository
 public class TasksRepositoryImpl implements TasksRepository {
 
-    private  final List<Task> tasks = new LinkedList<>(){{
-        this.add(new Task("First Task"));
-        this.add(new Task("Second Task"));
-        this.add(new Task("thid Task"));
-    }};
+    private  final List<Task> tasks = new LinkedList<>();
 
     @Override
     public List<Task> findAll() {
@@ -31,5 +27,9 @@ public class TasksRepositoryImpl implements TasksRepository {
         return this.tasks.stream()
                 .filter(task -> task.id().equals(id))
                 .findFirst();
+    }
+
+    public List<Task> getTasks() {
+        return tasks;
     }
 }
